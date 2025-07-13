@@ -33,6 +33,8 @@ Anaconda          # Create inference and training environments on Ubuntu
 ```
 python dataprocessing/format_conversion/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-train
 ```
+5. Use the test labels under data/aicity/aicity_2024_fisheye8k/test from the 3rd place in 2024, which are publicly available in [Google Drive](https://drive.google.com/file/d/1pj1hWajt2Zh_A7cIQBPyvQg7weXwhaiA/view?usp=sharing)/data.zip
+
 ## Models Training
 
 ### YOLOR-D6
@@ -43,7 +45,7 @@ conda create -n yolor python=3.8
 conda activate yolor_2025
 ```
 
-2. Download the COCO-pretrained YOLOr-D6 model released by the authors and put the checkpoint in `./train/YoloR/`. Pretrained link: [yolor-d6.pt](https://github.com/WongKinYiu/yolor/releases/download/weights/yolor-d6.pt)
+2. Download the COCO-pretrained YOLOr-D6 model released by the authors and put the checkpoint in `train/YoloR/`. Pretrained link: [yolor-d6.pt](https://github.com/WongKinYiu/yolor/releases/download/weights/yolor-d6.pt)
 
 3. Install the dependencies
 ```
@@ -54,12 +56,12 @@ pip install -r requirements.txt
 
 ```
 # Move to the YOLO-R directory
-cd ./train/YoloR
+cd train/YoloR
 
 # Train the yolor-d6 model for 250 epochs
-python train.py --batch-size 8 --img 1280 1280 --data ../../dataset/visdrone_fisheye8k.yaml --cfg models/yolor-d6.yaml --weights './yolor-d6.pt' --device 0 --name yolor_w6 --hyp hyp.scratch.1280.yaml --epochs 250
+python train.py --batch-size 8 --img 1280 1280 --data ../../dataset/visdrone_fisheye8k.yaml --cfg models/yolor-d6.yaml --weights './yolor-d6.pt' --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
 ```
-The checkpoints will be saved in `./train/YoloR/runs/train/`
+The checkpoints will be saved in `train/YoloR/runs/train/`
 
 
 
