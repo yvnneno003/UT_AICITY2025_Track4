@@ -1,3 +1,11 @@
 # UT_2025_T4
 
-Use Anaconda on Ubuntu
+# Instructions:
+
+## Installation
+Install the following dependencies:
+```
+Anaconda          # Create inference and training environments on Ubuntu
+```
+
+
