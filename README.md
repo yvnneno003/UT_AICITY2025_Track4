@@ -12,9 +12,9 @@ Install additional dependencies:
 pip install -r requirements.txt
 ```
 ## Data preparation
-1. Download the Fisheye8K dataset, and put the data into `datasets/fisheye8k/`. Link to the fisheye8k dataset: [link](https://scidm.nchc.org.tw/en/dataset/fisheye8k/resource/f6e7500d-1d6d-48ea-9d38-c4001a17170e/nchcproxy)
+1. Download the [Fisheye8K](https://scidm.nchc.org.tw/en/dataset/fisheye8k/resource/f6e7500d-1d6d-48ea-9d38-c4001a17170e/nchcproxy) dataset, and put the data into `datasets/fisheye8k/`.
 
-2. Download the VisDrone dataset, and put the data into `datasets/visdrone/`. Link to the VisDrone dataset: [link](https://github.com/VisDrone/VisDrone-Dataset?tab=readme-ov-file)
+2. Download the [VisDrone](https://github.com/VisDrone/VisDrone-Dataset?tab=readme-ov-file) dataset, and put the data into `datasets/visdrone/`.
 
 3. Download the FisheyeEval1k test dataset, and put the data into `datasets/fisheye_test/`. For convenience, all test images should be put into one folder named `images`. The `datasets/` directory will look like below:
 
@@ -56,12 +56,12 @@ cp datasets/fisheye8k/train/labels/* datasets/8k_random/labels/
 cp datasets/fisheye8k/test/labels/* datasets/8k_random/labels/
 python dataprocessing/8k_random_split.py
 ```
-7. The download path of our datasets on Google Drive is : [8k_random.zip](https://drive.google.com/file/d/1LruOMKFEB3Svo_EgxLhhN4JUxQGF2mns/view?usp=drive_link) [visdrone.zip](https://drive.google.com/file/d/1kM9rhdhpl7zz1WGRxp9NZM-PoF5nuHh2/view?usp=drive_link) [fisheye_test.zip](https://drive.google.com/file/d/1ekkW2xQgS77NrrFFkn4Ll2AwKj47G-N9/view?usp=drive_link) [fisheye8k.zip](https://drive.google.com/file/d/1ZFtHvsEHxQQ46x6u_BE6rh3QFmUYbZ1X/view?usp=drive_link) 
+7. The download path of our datasets on Google Drive is : [8k_random](https://drive.google.com/file/d/1LruOMKFEB3Svo_EgxLhhN4JUxQGF2mns/view?usp=drive_link) [visdrone](https://drive.google.com/file/d/1kM9rhdhpl7zz1WGRxp9NZM-PoF5nuHh2/view?usp=drive_link) [fisheye_test](https://drive.google.com/file/d/1ekkW2xQgS77NrrFFkn4Ll2AwKj47G-N9/view?usp=drive_link) [fisheye8k](https://drive.google.com/file/d/1ZFtHvsEHxQQ46x6u_BE6rh3QFmUYbZ1X/view?usp=drive_link) 
    
 ## Models Training
 
 ### YOLOR-D6
-Follow these instructions to train the YOLOR-W6:
+Follow these instructions to train the YOLOR-D6:
 1. Create the conda environment
 ```
 conda create -n yolor python=3.8
@@ -82,7 +82,7 @@ pip install -r requirements.txt
 cd train/YoloR
 
 # Train the yolor-d6 model for 250 epochs
-python train.py --batch-size 8 --img 1280 1280 --data ../../dataset/visdrone_fisheye8k.yaml --cfg models/yolor-d6.yaml --weights './yolor-d6.pt' --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
+python train.py --batch-size 8 --img 1280 1280 --data ../../datasets/visdrone_fisheye8k.yaml --cfg models/yolor-d6.yaml --weights './yolor-d6.pt' --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
 ```
 The checkpoints will be saved in `train/YoloR/runs/train/`
 
