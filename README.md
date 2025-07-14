@@ -82,7 +82,7 @@ pip install -r requirements.txt
 cd train/YoloR
 
 # Train the yolor-d6 model for 250 epochs
-python train.py --batch-size 8 --img 1280 1280 --data ../../datasets/visdrone_fisheye8k.yaml --cfg models/yolor-d6.yaml --weights './yolor-d6.pt' --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
+python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_fisheye8k.yaml --cfg models/yolor-d6-SPP.yaml --weights yolor-d6.pt --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
 ```
 The checkpoints will be saved in `train/YoloR/runs/train/`
 
