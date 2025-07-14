@@ -56,7 +56,8 @@ cp datasets/fisheye8k/train/labels/* datasets/8k_random/labels/
 cp datasets/fisheye8k/test/labels/* datasets/8k_random/labels/
 python dataprocessing/8k_random_split.py
 ```
-
+7. The download path of our datasets on Google Drive is : [8k_random.zip](https://drive.google.com/file/d/1LruOMKFEB3Svo_EgxLhhN4JUxQGF2mns/view?usp=drive_link) [visdrone.zip](https://drive.google.com/file/d/1kM9rhdhpl7zz1WGRxp9NZM-PoF5nuHh2/view?usp=drive_link) [fisheye_test.zip](https://drive.google.com/file/d/1ekkW2xQgS77NrrFFkn4Ll2AwKj47G-N9/view?usp=drive_link) [fisheye8k.zip](https://drive.google.com/file/d/1ZFtHvsEHxQQ46x6u_BE6rh3QFmUYbZ1X/view?usp=drive_link) 
+   
 ## Models Training
 
 ### YOLOR-D6
