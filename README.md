@@ -85,7 +85,7 @@ cd train/YoloR
 python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_fisheye8k.yaml --cfg models/yolor-d6-SPP.yaml --weights yolor-d6.pt --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
 ```
 ### YOLOV10
-Follow these instructions to train the YOLOV10:
+Follow these instructions to train the YOLOV10-X:
 1. Create the conda environment
 ```
 conda create -n yolor python=3.9
