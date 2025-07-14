@@ -1,0 +1,4 @@
+git-lfs
+opencv-python
+numpy==1.20.0
+tqdm
