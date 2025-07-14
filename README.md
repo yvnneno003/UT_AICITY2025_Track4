@@ -35,7 +35,13 @@ pip install -r requirements.txt
 4. Convert the VisDrone dataset to YOLO format using the following command. Note that when converting the VisDrone dataset, we also map each category to their corresponding one in the Fisheye8k dataset, other categories are ignored. The labels will be saved in the "labels" directory under the corresponding sub-dataset
 
 ```
-python dataprocessing/format_conversion/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-train
+python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-train
+```
+```
+python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-test-dev
+```
+```
+python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-val
 ```
 5. Use the test labels under data/aicity/aicity_2024_fisheye8k/test from the 3rd place in 2024, which are publicly available in [Google Drive](https://drive.google.com/file/d/1pj1hWajt2Zh_A7cIQBPyvQg7weXwhaiA/view?usp=sharing)/data.zip
 
