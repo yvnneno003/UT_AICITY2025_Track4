@@ -47,6 +47,7 @@ python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone201
 python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-val
 ```
 5. Use the test labels under data/aicity/aicity_2024_fisheye8k/test from the 3rd place in 2024, which are publicly available in [Google Drive](https://drive.google.com/file/d/1pj1hWajt2Zh_A7cIQBPyvQg7weXwhaiA/view?usp=sharing)/data.zip
+6. 
 
 ## Models Training
 
