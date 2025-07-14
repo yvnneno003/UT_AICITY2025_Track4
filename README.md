@@ -47,7 +47,15 @@ python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone201
 python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-val
 ```
 5. Use the test labels under data/aicity/aicity_2024_fisheye8k/test from the 3rd place in 2024, which are publicly available in [Google Drive](https://drive.google.com/file/d/1pj1hWajt2Zh_A7cIQBPyvQg7weXwhaiA/view?usp=sharing)/data.zip
-6. 
+6. Redistribute the Fisheye8K dataset by randomly splitting it into 70:30.
+```
+mkdir 8k_random
+cp datasets/fisheye8k/train/images/* datasets/8k_random/images/
+cp datasets/fisheye8k/test/images/* datasets/8k_random/images/
+cp datasets/fisheye8k/train/labels/* datasets/8k_random/labels/
+cp datasets/fisheye8k/test/labels/* datasets/8k_random/labels/
+python dataprocessing/8k_random_split.py
+```
 
 ## Models Training
 
