@@ -1,4 +1,4 @@
 git-lfs
 opencv-python
-numpy==1.23.4
+numpy
 tqdm
