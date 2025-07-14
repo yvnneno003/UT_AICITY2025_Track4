@@ -88,7 +88,7 @@ python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_fi
 Follow these instructions to train the YOLOV10:
 1. Create the conda environment
 ```
-conda create -n yolor python=3.8
+conda create -n yolor python=3.9
 conda activate yolov10_2025
 ```
 
@@ -97,6 +97,7 @@ conda activate yolov10_2025
 3. Install the dependencies
 ```
 pip install -r requirements.txt
+pip install -e .
 ```
 
 4. Train the YOLOV10 model on the VisDrone+Fisheye8k+Pseudo Labels datasets using the following command
@@ -106,7 +107,7 @@ pip install -r requirements.txt
 cd train/YoloV10
 
 # Train the yolov10-x model for 150 epochs
-python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_fisheye8k.yaml --cfg models/yolor-d6-SPP.yaml --weights yolor-d6.pt --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
+yolo detect train data=../../datasets/visdrone_fisheye8k_pseudo.yaml model=datasets/FishEye8K/yolov10x-FishEye8K.yaml epochs=150 batch=2 imgsz=1280 device=0 pretrained=yolov10x.pt save_period=25
 ```
 
 
