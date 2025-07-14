@@ -68,7 +68,7 @@ conda create -n yolor python=3.8
 conda activate yolor_2025
 ```
 
-2. Download the COCO-pretrained YOLOr-D6 model released by the authors and put the checkpoint in `train/YoloR/`. Pretrained link: [yolor-d6.pt](https://github.com/WongKinYiu/yolor/releases/download/weights/yolor-d6.pt)
+2. Download the COCO-[pretrained YOLOr-D6 model](https://github.com/WongKinYiu/yolor/releases/download/weights/yolor-d6.pt) released by the authors and put the checkpoint in `train/YoloR/`.
 
 3. Install the dependencies
 ```
