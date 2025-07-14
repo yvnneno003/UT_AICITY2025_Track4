@@ -84,7 +84,30 @@ cd train/YoloR
 # Train the yolor-d6 model for 250 epochs
 python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_fisheye8k.yaml --cfg models/yolor-d6-SPP.yaml --weights yolor-d6.pt --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
 ```
-The checkpoints will be saved in `train/YoloR/runs/train/`
+### YOLOV10
+Follow these instructions to train the YOLOV10:
+1. Create the conda environment
+```
+conda create -n yolor python=3.8
+conda activate yolov10_2025
+```
+
+2. Download the COCO-[pretrained YOLOV10-X model](https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10x.pt) released by the authors and put the checkpoint in `train/YoloV10/`.
+
+3. Install the dependencies
+```
+pip install -r requirements.txt
+```
+
+4. Train the YOLOV10 model on the VisDrone+Fisheye8k+Pseudo Labels datasets using the following command
+
+```
+# Move to the YOLOV10 directory
+cd train/YoloV10
+
+# Train the yolov10-x model for 150 epochs
+python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_fisheye8k.yaml --cfg models/yolor-d6-SPP.yaml --weights yolor-d6.pt --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
+```
 
 
 
