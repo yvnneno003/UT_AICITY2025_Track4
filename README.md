@@ -110,5 +110,30 @@ cd train/YoloV10
 yolo detect train data=../../datasets/visdrone_fisheye8k_pseudo.yaml model=datasets/FishEye8K/yolov10x-FishEye8K.yaml epochs=150 batch=2 imgsz=1280 device=0 pretrained=yolov10x.pt save_period=25
 ```
 
+### YOLOV13
+Follow these instructions to train the YOLOV13-l:
+1. Create the conda environment
+```
+conda create -n yolor python=3.11
+conda activate yolov13_2025
+```
+
+2. Download the COCO-[pretrained YOLOV13-l model](https://github.com/iMoonLab/yolov13/releases/download/yolov13/yolov13l.pt) released by the authors and put the checkpoint in `train/YoloV13/`.
+
+3. Install the dependencies
+```
+pip install -r requirements.txt
+pip install -e .
+```
+
+4. Train the YOLOV13 model on the Fisheye8k+Pseudo Labels datasets using the following command
+
+```
+# Move to the YOLOV13 directory
+cd train/YoloV13
+
+# Train the yolov13-l model for 150 epochs
+yolo task=detect mode=train imgsz=1280 batch=2 epochs=60 data=../../datasets/fisheye8k_pseudo.yaml   model=/model/yolov13l.pt hsv_h=0.015 hsv_s=0.7 hsv_v=0.4 flipud=0.0 fliplr=0.5 scale=0.5 mosaic=1.0 mixup=0.1 copy_paste=0.15
+```
 
 
