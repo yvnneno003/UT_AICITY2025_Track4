@@ -7,6 +7,10 @@ Install the following dependencies:
 ```
 Anaconda          # Create inference and training environments on Ubuntu
 ```
+Install additional dependencies:
+```
+pip install -r requirements.txt
+```
 ## Data preparation
 1. Download the Fisheye8K dataset, and put the data into `datasets/fisheye8k/`. Link to the fisheye8k dataset: [link](https://scidm.nchc.org.tw/en/dataset/fisheye8k/resource/f6e7500d-1d6d-48ea-9d38-c4001a17170e/nchcproxy)
 
