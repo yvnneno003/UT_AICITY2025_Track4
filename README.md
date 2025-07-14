@@ -20,6 +20,9 @@ pip install -r requirements.txt
 
 ```
 - datasets
+    - 8k_random
+        - test
+        - val
     - fisheye8k
         - test
         - train
