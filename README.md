@@ -204,3 +204,8 @@ yolo predict model= ../../checkpoints/yolov13_l_best_checkpoint.pt source= ../..
 python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_test/images --labels_dir runs/detect/predict/labels --output yolov13_l.json --conf 1 --submission 1 --is_fisheye8k 1
 
 ```
+### Model ensembling
+```
+cd dataprocessing
+python wbf_fuse_results.py
+```
