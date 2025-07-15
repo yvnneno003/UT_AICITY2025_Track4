@@ -133,7 +133,33 @@ pip install -e .
 cd train/YoloV13
 
 # Train the yolov13-l model for 150 epochs
-yolo task=detect mode=train imgsz=1280 batch=2 epochs=60 data=../../datasets/fisheye8k_pseudo.yaml   model=/model/yolov13l.pt hsv_h=0.015 hsv_s=0.7 hsv_v=0.4 flipud=0.0 fliplr=0.5 scale=0.5 mosaic=1.0 mixup=0.1 copy_paste=0.15
+yolo task=detect mode=train imgsz=1280 batch=2 epochs=150 data=../../datasets/fisheye8k_pseudo.yaml   model=/model/yolov13l.pt hsv_h=0.015 hsv_s=0.7 hsv_v=0.4 flipud=0.0 fliplr=0.5 scale=0.5 mosaic=1.0 mixup=0.1 copy_paste=0.15
 ```
 
+## Models Inferencing
 
+### Checkpoints
+For quick reproduction, download checkpoints and put them in the `checkpoints` : 
+- [YoloR](https://drive.google.com/file/d/1qPFxhDH1kOoKYOlHDuZuQ8IE3ZrmAKh5/view?usp=drive_link)
+- [YoloV10](https://drive.google.com/file/d/17ByreGsuBy_HJJTRLlziTkyoWQQoV8uK/view?usp=drive_link)
+- [YoloV13](https://drive.google.com/file/d/1bpaZ56eBZSmwPzbUOnzkMROzFK5sxkiZ/view?usp=drive_link)
+
+### YOLOR-D6
+For inferencing, follow these instructions
+1. Move to the YOLOR-D6 directory and activate the yolor conda environment created in the training phase. If you haven't, see the **Training** section for instructions.
+```
+cd train/YoloR
+
+# Activate the yolor environment
+conda activate yolor_2025
+```
+
+2. Infer using the yolor model :
+```
+python detect.py --source ../../datasets/fisheye_test/images --weights ../../checkpoints/yolor_d6_best_checkpoint.pt --conf 0.5 --iou 0.55 --img-size 1280 --device 0 --save-txt --save-conf
+```
+
+3. Convert to submission format. Remember to modify the path to the corresponding labels_dir
+```
+python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_test/images --labels_dir runs/detect/exp/labels --output yolor_d6.json --conf 1 --submission 1 --is_fisheye8k 1
+```
