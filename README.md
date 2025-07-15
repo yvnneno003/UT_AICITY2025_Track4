@@ -163,3 +163,24 @@ python detect.py --source ../../datasets/fisheye_test/images --weights ../../che
 ```
 python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_test/images --labels_dir runs/detect/exp/labels --output yolor_d6.json --conf 1 --submission 1 --is_fisheye8k 1
 ```
+
+### YOLOV10-X
+For inferencing, follow these instructions
+1. Move to the YOLOV10-X directory and activate the yolov10 conda environment created in the training phase. If you haven't, see the **Training** section for instructions.
+```
+cd train/YoloV10
+
+# Activate the yolor environment
+conda activate yolov10_2025
+```
+
+2. Infer using the yolov10 model :
+```
+yolo predict model= ../../checkpoints/yolor_d6_best_checkpoint.pt source= ../../datasets/fisheye_test/images imgsz=1280 device=0 iou=0.65 conf=0.5 save_txt=True save_conf=True
+```
+
+3. Convert to submission format. Remember to modify the path to the corresponding labels_dir
+```
+python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_test/images --labels_dir runs/detect/predict/labels --output yolov10_x.json --conf 1 --submission 1 --is_fisheye8k 1
+
+```
