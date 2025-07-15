@@ -182,5 +182,25 @@ yolo predict model= ../../checkpoints/yolov10_x_best_checkpoint.pt source= ../..
 3. Convert to submission format. Remember to modify the path to the corresponding labels_dir
 ```
 python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_test/images --labels_dir runs/detect/predict/labels --output yolov10_x.json --conf 1 --submission 1 --is_fisheye8k 1
+```
+
+### YOLOV13-L
+For inferencing, follow these instructions
+1. Move to the YOLOV13-L directory and activate the yolov13 conda environment created in the training phase. If you haven't, see the **Training** section for instructions.
+```
+cd train/YoloV13
+
+# Activate the yolov13_2025 environment
+conda activate yolov13_2025
+```
+
+2. Infer using the yolov13 model :
+```
+yolo predict model= ../../checkpoints/yolov13_l_best_checkpoint.pt source= ../../datasets/fisheye_test/images imgsz=1280 device=0 iou=0.5 conf=0.495 save_txt=True save_conf=True
+```
+
+3. Convert to submission format. Remember to modify the path to the corresponding labels_dir
+```
+python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_test/images --labels_dir runs/detect/predict/labels --output yolov13_l.json --conf 1 --submission 1 --is_fisheye8k 1
 
 ```
