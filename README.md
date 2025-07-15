@@ -64,7 +64,7 @@ python dataprocessing/8k_random_split.py
 Follow these instructions to train the YOLOR-D6:
 1. Create the conda environment
 ```
-conda create -n yolor python=3.8
+conda create -n yolor_2025 python=3.8
 conda activate yolor_2025
 ```
 
@@ -88,7 +88,7 @@ python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_fi
 Follow these instructions to train the YOLOV10-X:
 1. Create the conda environment
 ```
-conda create -n yolor python=3.9
+conda create -n yolov10_2025 python=3.9
 conda activate yolov10_2025
 ```
 
@@ -114,7 +114,7 @@ yolo detect train data=../../datasets/visdrone_fisheye8k_pseudo.yaml model=datas
 Follow these instructions to train the YOLOV13-l:
 1. Create the conda environment
 ```
-conda create -n yolor python=3.11
+conda create -n yolov13_2025 python=3.11
 conda activate yolov13_2025
 ```
 
@@ -150,7 +150,7 @@ For inferencing, follow these instructions
 ```
 cd train/YoloR
 
-# Activate the yolor environment
+# Activate the yolor_2025 environment
 conda activate yolor_2025
 ```
 
@@ -170,13 +170,13 @@ For inferencing, follow these instructions
 ```
 cd train/YoloV10
 
-# Activate the yolor environment
+# Activate the yolov10_2025 environment
 conda activate yolov10_2025
 ```
 
 2. Infer using the yolov10 model :
 ```
-yolo predict model= ../../checkpoints/yolor_d6_best_checkpoint.pt source= ../../datasets/fisheye_test/images imgsz=1280 device=0 iou=0.65 conf=0.5 save_txt=True save_conf=True
+yolo predict model= ../../checkpoints/yolov10_x_best_checkpoint.pt source= ../../datasets/fisheye_test/images imgsz=1280 device=0 iou=0.65 conf=0.5 save_txt=True save_conf=True
 ```
 
 3. Convert to submission format. Remember to modify the path to the corresponding labels_dir
