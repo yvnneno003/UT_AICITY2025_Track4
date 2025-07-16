@@ -206,6 +206,11 @@ python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_tes
 ```
 ### Model ensembling
 ```
-cd dataprocessing
-python wbf_fuse_results.py
+# Install the dependencies
+pip install -U openmim
+mim install mmengine
+pip install mmdet
+mim install "mmcv==2.0.0"
+
+python dataprocessing/wbf_fuse_results.py --inputs train/YoloR/yolor_d6.json train/YoloV10/yolov10_x.json train/YoloV13/yolov13_l.json --weights 9 9 9 --output final_result.json
 ```
