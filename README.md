@@ -127,6 +127,7 @@ cd train/YoloV13
 
 3. Install the dependencies
 ```
+wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3+cu11torch2.2cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
 pip install -r requirements.txt
 pip install -e .
 ```
