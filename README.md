@@ -32,7 +32,6 @@ pip install -r requirements.txt
         - VisDrone2019-DET-test_dev
     - fisheye_test
         - images
-    - json_labels
 ```
 
 4. Convert the VisDrone dataset to YOLO format using the following command. Note that when converting the VisDrone dataset, we also map each category to their corresponding one in the Fisheye8k dataset, other categories are ignored. The labels will be saved in the "labels" directory under the corresponding sub-dataset
