@@ -156,7 +156,7 @@ conda activate yolor_2025
 
 2. Infer using the yolor model :
 ```
-python detect.py --source ../../datasets/fisheye_test/images --weights ../../checkpoints/yolor_d6_best_checkpoint.pt --conf 0.5 --iou 0.55 --img-size 1280 --device 0 --save-txt --save-conf
+python detect-gamma.py --source ../../datasets/fisheye_test/images --weights ../../checkpoints/yolor_d6_best_checkpoint.pt --conf 0.5 --iou 0.55 --img-size 1280 --device 0 --save-txt --save-conf
 ```
 
 3. Convert to submission format. Remember to modify the path to the corresponding labels_dir
