@@ -66,6 +66,9 @@ Follow these instructions to train the YOLOR-D6:
 ```
 conda create -n yolor_2025 python=3.8
 conda activate yolor_2025
+
+# Move to the YOLO-R directory
+cd train/YoloR
 ```
 
 2. Download the COCO-[pretrained YOLOr-D6 model](https://github.com/WongKinYiu/yolor/releases/download/weights/yolor-d6.pt) released by the authors and put the checkpoint in `train/YoloR/`.
@@ -81,9 +84,6 @@ pip install numpy==1.23.5
 4. Train the YOLOr-D6 model on the VisDrone+Fisheye8k dataset using the following command
 
 ```
-# Move to the YOLO-R directory
-cd train/YoloR
-
 # Train the yolor-d6 model for 250 epochs
 python train.py --batch-size 2 --img 1920 1920 --data ../../datasets/visdrone_8k_random.yaml --cfg models/yolor-d6-SPP.yaml --weights yolor-d6.pt --device 0 --name yolor_d6 --hyp hyp.scratch.1280.yaml --epochs 250
 ```
@@ -93,6 +93,9 @@ Follow these instructions to train the YOLOV10-X:
 ```
 conda create -n yolov10_2025 python=3.9
 conda activate yolov10_2025
+
+# Move to the YOLOV10 directory
+cd train/YoloV10
 ```
 
 2. Download the COCO-[pretrained YOLOV10-X model](https://github.com/THU-MIG/yolov10/releases/download/v1.1/yolov10x.pt) released by the authors and put the checkpoint in `train/YoloV10/`.
@@ -106,9 +109,6 @@ pip install -e .
 4. Train the YOLOV10 model on the VisDrone+Fisheye8k+Pseudo Labels datasets using the following command
 
 ```
-# Move to the YOLOV10 directory
-cd train/YoloV10
-
 # Train the yolov10-x model for 150 epochs
 yolo detect train data=../../datasets/visdrone_fisheye8k_pseudo.yaml model=datasets/FishEye8K/yolov10x-FishEye8K.yaml epochs=150 batch=2 imgsz=1280 device=0 pretrained=yolov10x.pt save_period=25
 ```
@@ -119,6 +119,9 @@ Follow these instructions to train the YOLOV13-l:
 ```
 conda create -n yolov13_2025 python=3.11
 conda activate yolov13_2025
+
+# Move to the YOLOV13 directory
+cd train/YoloV13
 ```
 
 2. Download the COCO-[pretrained YOLOV13-l model](https://github.com/iMoonLab/yolov13/releases/download/yolov13/yolov13l.pt) released by the authors and put the checkpoint in `train/YoloV13/`.
@@ -132,9 +135,6 @@ pip install -e .
 4. Train the YOLOV13 model on the Fisheye8k+Pseudo Labels datasets using the following command
 
 ```
-# Move to the YOLOV13 directory
-cd train/YoloV13
-
 # Train the yolov13-l model for 150 epochs
 yolo task=detect mode=train imgsz=1280 batch=2 epochs=150 data=../../datasets/fisheye8k_pseudo.yaml   model=/model/yolov13l.pt hsv_h=0.015 hsv_s=0.7 hsv_v=0.4 flipud=0.0 fliplr=0.5 scale=0.5 mosaic=1.0 mixup=0.1 copy_paste=0.15
 ```
