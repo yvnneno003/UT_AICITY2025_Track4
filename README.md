@@ -135,7 +135,7 @@ pip install -e .
 
 ```
 # Train the yolov13-l model for 150 epochs
-yolo task=detect mode=train imgsz=1280 batch=2 epochs=150 data=../../datasets/fisheye8k_pseudo.yaml   model=/model/yolov13l.pt hsv_h=0.015 hsv_s=0.7 hsv_v=0.4 flipud=0.0 fliplr=0.5 scale=0.5 mosaic=1.0 mixup=0.1 copy_paste=0.15
+yolo task=detect mode=train imgsz=1280 batch=2 epochs=150 data=../../datasets/fisheye8k_pseudo.yaml model=yolov13l.pt hsv_h=0.015 hsv_s=0.7 hsv_v=0.4 flipud=0.0 fliplr=0.5 scale=0.5 mosaic=1.0 mixup=0.1 copy_paste=0.15 device=0
 ```
 
 ## Models Inferencing
