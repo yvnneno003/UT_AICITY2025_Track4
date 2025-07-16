@@ -1,14 +1,14 @@
 path: ../../datasets 
 train: [
-  "fisheye8k/train",
-  "fisheye8k/test",
-  "visdrone/VisDrone2019-DET-test-dev/images",
-  "visdrone/VisDrone2019-DET-train/images",
-  "visdrone/VisDrone2019-DET-val/images",
+  "../../datasets/fisheye8k/train",
+  "../../datasets/fisheye8k/test",
+  "../../datasets/visdrone/VisDrone2019-DET-test-dev/images",
+  "../../datasets/visdrone/VisDrone2019-DET-train/images",
+  "../../datasets/visdrone/VisDrone2019-DET-val/images",
 ]
 
 val: [
-  "fisheye_test/images",
+  "../../datasets/fisheye_test/images",
 ]
 
 # number of classes
