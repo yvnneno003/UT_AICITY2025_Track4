@@ -140,9 +140,9 @@ yolo task=detect mode=train imgsz=1280 batch=2 epochs=150 data=../../datasets/fi
 
 ### Checkpoints
 For quick reproduction, download checkpoints and put them in the `checkpoints` : 
-- [YoloR](https://drive.google.com/file/d/1qPFxhDH1kOoKYOlHDuZuQ8IE3ZrmAKh5/view?usp=drive_link)
-- [YoloV10](https://drive.google.com/file/d/17ByreGsuBy_HJJTRLlziTkyoWQQoV8uK/view?usp=drive_link)
-- [YoloV13](https://drive.google.com/file/d/1bpaZ56eBZSmwPzbUOnzkMROzFK5sxkiZ/view?usp=drive_link)
+- [YoloR](https://drive.google.com/file/d/1SUv94T97-GX69Rrafl0m9Ch06wSzjAvY/view?usp=drive_link)
+- [YoloV10](https://drive.google.com/file/d/1LCzWJCjnSqBXqu2_UW8FjKhcNjru6BFu/view?usp=drive_link)
+- [YoloV13](https://drive.google.com/file/d/1imKrw85qcDO78pslceCHojKWfRkbnsS7/view?usp=drive_link)
 
 ### YOLOR-D6
 For inferencing, follow these instructions
