@@ -73,6 +73,9 @@ conda activate yolor_2025
 3. Install the dependencies
 ```
 pip install -r requirements.txt
+pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
+pip install einops
+pip install numpy==1.23.5
 ```
 
 4. Train the YOLOr-D6 model on the VisDrone+Fisheye8k dataset using the following command
