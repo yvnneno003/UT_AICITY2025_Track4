@@ -197,16 +197,11 @@ cd train/YoloV13
 conda activate yolov13_2025
 ```
 
-2. Infer using the yolov13 model :
+2. Infer using the yolov13 model and Convert to submission format:
 ```
-yolo predict model= ../../checkpoints/yolov13_l_best_checkpoint.pt source= ../../datasets/fisheye_test/images imgsz=1280 device=0 iou=0.5 conf=0.495 save_txt=True save_conf=True
+python ../../dataprocessing/infer_Y13.py --model ../../checkpoints/yolov13_l_best_checkpoint.pt --image_dir ../../datasets/fisheye_test/images --output yolov13_l.json --conf 0.495 --iou 0.45 --device 0
 ```
 
-3. Convert to submission format. Remember to modify the path to the corresponding labels_dir
-```
-python ../../dataprocessing/yolo2coco.py --images_dir ../../datasets/fisheye_test/images --labels_dir runs/detect/predict/labels --output yolov13_l.json --conf 1 --submission 1 --is_fisheye8k 1
-
-```
 ### Model ensembling
 ```
 # Install the dependencies
