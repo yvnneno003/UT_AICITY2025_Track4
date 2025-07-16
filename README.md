@@ -109,7 +109,7 @@ pip install -e .
 
 ```
 # Train the yolov10-x model for 150 epochs
-yolo detect train data=../../datasets/visdrone_fisheye8k_pseudo.yaml model=datasets/FishEye8K/yolov10x-FishEye8K.yaml epochs=150 batch=2 imgsz=1280 device=0 pretrained=yolov10x.pt save_period=25
+yolo detect train data= ../../datasets/visdrone_fisheye8k_all.yaml model= ultralytics/cfg/models/v10/yolov10x-FishEye8K.yaml epochs=150 batch=2 imgsz=1280 device=0 pretrained=yolov10x.pt save_period=25
 ```
 
 ### YOLOV13
