@@ -1,4 +1,9 @@
 # UT_2025_T4
+This repository contains the source code for AI City Challenge 2025 Track 4 ( Enhanced Fisheye Object Detection via YOLO Ensemble Learning and Weighted Box Fusion ).
+
+- Team Name: UT_T1
+- Team ID: 43
+___
 
 # Instructions:
 
