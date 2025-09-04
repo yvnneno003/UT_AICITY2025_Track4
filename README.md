@@ -39,7 +39,7 @@ pip install -r requirements.txt
         - images
 ```
 
-4. Convert the VisDrone dataset to YOLO format using the following command. Note that when converting the VisDrone dataset, we also map each category to their corresponding one in the Fisheye8k dataset, other categories are ignored. The labels will be saved in the "labels" directory under the corresponding sub-dataset
+4. Convert the VisDrone dataset to YOLO format using the following command. Note that when converting the VisDrone dataset, we also map each category to their corresponding one in the Fisheye8k dataset, other categories are ignored. The labels will be saved in the "labels" directory under the corresponding sub-dataset. [2024 VNPT](https://github.com/vnptai/AICITY2024_Track4)
 
 ```
 python dataprocessing/visdrone2yolo.py --data_path datasets/visdrone/VisDrone2019-DET-train
