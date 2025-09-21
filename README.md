@@ -4,13 +4,81 @@ This repository contains the source code for AI City Challenge 2025 Track 4 ( En
 - Team Name: UT_T1
 - Team ID: 43
 ___
+## 🔧 Docker Image
 
-# Instructions:
+g11216017/ut_aic25_t4_ultralytics:8.3.161_yry10y13
+
+You can pull it using:
+
+[bash]
+```
+docker pull g11216017/ut_aic25_t4_ultralytics:8.3.161_yry10y13
+```
+## ▶️ Run Command
+
+Please replace the mount paths with your local directories:
+
+[bash]
+```
+docker run -it --ipc=host --gpus all --rm \
+  -v /your_script_path:/script \
+  -v /your_model_path:/model \
+  -v /your_test_data_path:/data \
+  -v /your_output_path:/output \
+  --name yolo_predict g11216017/ut_aic25_t4_ultralytics:8.3.161_yry10y13
+```
+## 📦 Required Files
+
+Please download and extract the following files into their respective paths:
+
+🔗 Model Files:
+https://drive.google.com/file/d/1Zya8otRhovDbhnuctOZXf78L1Bg8JeuL/view?usp=drive_link
+
+🔗 Script Files:
+https://drive.google.com/file/d/1IImfbLDQL2wx-rCJHPIYBs520W-EW6_7/view?usp=drive_link
+
+After extraction, the directory structure inside the container should be as follows:
+
+- Under /model:
+
+    - YoloR-d6-e90.pt
+
+    - yolov10x_vfp_train4_1280_best.engine
+
+    - y13l_best57.engine
+
+- Under /script:
+
+    - predict/
+
+    - YoloR_train/
+
+- Test images should be placed under:
+
+    - /data/images/
+
+## 🧪 Evaluation Command Inside Container
+
+[bash]
+```
+docker exec -it yolo_predict bash
+
+cd /script/predict
+
+python infer_YR_Y10_Y13_WBF.py \
+  --image_folder /data/images \
+  --output_dir /output \
+  --yolor_model /model/YoloR-d6-e90.pt \
+  --y10_model /model/yolov10x_vfp_train4_1280_best.engine \
+  --y13_model /model/y13l_best57.engine
+```
+___  
+# environments on Ubuntu :
 
 ## Installation
 Install the following dependencies:
 ```
-Anaconda          # Create inference and training environments on Ubuntu
+Anaconda          # Create inference and training 
 ```
 Install additional dependencies:
 ```
